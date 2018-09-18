@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+</head>
+<script>
+    var daynum=new Array(13);
+    daynum=[0,31,28,31,30,31,30,31,31,30,31,30,31];
+    //var dayarray=new Array();
+    function changeday() {
+        var yearselect=document.getElementById("year").value;
+        var monthselect=document.getElementById("month").value;
+        var day=document.getElementsByName("day").value;
+        var dayselect=document.getElementById("day");
+        dayselect.options.length=0;
+        var month=Number(monthselect);
+        var year=Number(yearselect);
+        //console.log(month);
+        //console.log(daynum[month]);
+        //console.log(year);
+        for(var i=1;i<=daynum[month];i++){
+            if(year%4==0&&month==2){
+                for(var j=i;j<=29;j++){
+                    var option = new Option(j,j);
+                    dayselect.add(option);
+                }
+                break;
+            }
+            var option = new Option(i,i);
+            dayselect.add(option);
+        }
+    }
+
+</script>
+<body>
+<br><br>
+<fieldset>
+    <legend>免费开通人人网账号</legend>
+<form method="post" action="http://localhost/Work03Servlet">
+    <table cellspacing="8" >
+        <!--<tr><td>头像：</td><td><input type="file" name="image"></td></tr>-->
+        <tr><td>注册邮箱：</td><td><input type="text" name="account"></td></tr>
+        <tr><td> </td><td>你还可以使用<a href="Work02修改.html">账号</a>注册或者<a href="Work02修改.html">手机号</a>注册</td></tr>
+        <tr><td>密码：</td><td><input type="password" name="password"></td></tr>
+        <tr><td>真实姓名：</td><td><input type="text" name="realname"></td></tr>
+        <tr><td>性别：</td><td><input type="radio" name="sex" value="male">男&nbsp;&nbsp;&nbsp;<input type="radio" name="sex" value="female">女</td></tr>
+        <!--<tr><td>兴趣爱好：</td>
+            <td><input type="checkbox" name="hobby">打球&nbsp;&nbsp;&nbsp;
+                <input type="checkbox" name="hobby">玩游戏&nbsp;&nbsp;&nbsp;
+                <input type="checkbox" name="hobby">跑步&nbsp;&nbsp;&nbsp;
+                <input type="checkbox" name="hobby">读书
+            </td></tr>-->
+        <tr>
+            <td>生日：</td>
+            <td>
+                <select name="year" id="year" onchange="changeday()">
+                    <option value="1990">1990</option>
+                    <option value="1991">1991</option>
+                    <option value="1992">1992</option>
+                    <option value="1993">1993</option>
+                    <option value="1994">1994</option>
+                    <option value="1995">1995</option>
+                    <option value="1996">1996</option>
+                    <option value="1997">1997</option>
+                    <option value="1998">1998</option>
+                    <option value="1999">1999</option>
+                </select>
+                年
+                <select name="month" id="month" onchange="changeday()">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                </select>
+                月
+                <select name="day" id="day">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+                </select>
+                日
+            </td>
+
+        </tr>
+        <tr>
+            <td>我现在：</td>
+            <td>
+                <select name="state">
+                    <option value="工作">工作</option>
+                    <option value="上学">正在上学</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td> </td>
+            <td><img src="verycode.gif" height="125" width="425"/></td>
+        </tr>
+        <!--<tr>
+            <td>自我描述：</td>
+            <td>
+                <textarea rows="10" cols="70" name="selfdescription">
+
+                </textarea>
+            </td>
+        </tr>-->
+        <tr>
+            <td> </td><td><input type="submit" value="" style="width:188px; height:42px; background-image: url(btn_reg.gif)"></td>
+        </tr>
+
+    </table>
+
+</form>
+</fieldset>
+</body>
+</html>

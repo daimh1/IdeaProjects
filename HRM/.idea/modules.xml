@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/MD5/MD5.iml" filepath="$PROJECT_DIR$/MD5/MD5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Module1/Module1.iml" filepath="$PROJECT_DIR$/Module1/Module1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Module2/Module2.iml" filepath="$PROJECT_DIR$/Module2/Module2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Register_Demo/Register_Demo.iml" filepath="$PROJECT_DIR$/Register_Demo/Register_Demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hrm_ssm_Maven1/hrm_ssm_Maven1.iml" filepath="$PROJECT_DIR$/hrm_ssm_Maven1/hrm_ssm_Maven1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hrm_ssm_maven/hrm_ssm_maven.iml" filepath="$PROJECT_DIR$/hrm_ssm_maven/hrm_ssm_maven.iml" />
+    </modules>
+  </component>
+</project>

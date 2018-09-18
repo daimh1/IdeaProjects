@@ -1,0 +1,15 @@
+<?xml version = "1.0" encoding="GB2312" standalone="yes"?>
+<!DOCTYPE 购物篮 [
+                <!ELEMENT 购物篮 (肉+)>
+                <!ELEMENT 肉 EMPTY>
+                <!ATTLIST 肉
+                          品种   ( 鸡肉 | 牛肉 | 猪肉 | 鱼肉 )  #IMPLIED
+                          厂家   CDATA  #FIXED "双汇"
+                          编码   ID  #REQUIRED
+                 >
+        ]>
+<购物篮>
+    <肉  编码="bbb"/>
+    <肉  编码="aaa" 品种="牛肉"/>
+    <肉 编码="ccc" />
+</购物篮>

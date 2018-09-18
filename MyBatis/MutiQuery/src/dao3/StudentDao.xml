@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="homework03.StudentDao">
+
+
+   <resultMap id="myStudent" type="Student">
+       <id property="t_sid" column="t_sid"></id>
+       <collection property="courses"  javaType="list"
+                   select="homework03.StudentDao.findCourseBysid"
+                   column="t_sid">
+       </collection>
+   </resultMap>
+
+
+   <select id="findStudentBySid" parameterType="string" resultMap="myStudent">
+      SELECT * FROM  `t_stu` WHERE t_sid=#{xx};
+   </select>
+
+   <select id="findCourseBysid" parameterType="string" resultType="Course">
+        SELECT * FROM t_stu INNER JOIN t_course ON t_stu.`t_cid`=t_course.`t_cid`
+        WHERE t_stu.`t_Sid` = #{xx};
+   </select>
+
+
+
+</mapper>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        ">
+
+    <!--扫描包-->
+    <context:component-scan base-package="com"></context:component-scan>
+
+    <!--自动去增加处理器适配器和处理器映射器-->
+    <mvc:annotation-driven conversion-service="myConversionServcie"></mvc:annotation-driven>
+
+    <!--注册一个springmvc的类型转换服务-->
+    <bean id="myConversionServcie" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+      <property name="converters">
+          <set>
+              <bean class="com.utils.MyDateConverter"></bean>
+          </set>
+      </property>
+    </bean>
+
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+         <property name="maxUploadSizePerFile" value="10240000">
+         </property>
+    </bean>
+
+
+    <bean id="service" class="com.homework04.service.AccountServiceImpl">
+        <property name="dao" ref="dao"></property>
+    </bean>
+    <bean id="dao" class="com.homework04.Dao.AccountDaoImpl"></bean>
+    <bean class="org.springframework.transaction.support.TransactionTemplate">
+        <property name="transactionManager" ref="txmanager"></property>
+    </bean>
+    <bean id="txmanager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="datasource"></property>
+    </bean>
+    <bean id="datasource" class="org.apache.commons.dbcp.BasicDataSource">
+        <property name="password" value="2131415dmh"></property>
+        <property name="username" value="root"></property>
+        <property name="url" value="jdbc:mysql://localhost:8600/jdbc_0727?serverTimezone=GMT"></property>
+        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></property>
+    </bean>
+</beans>

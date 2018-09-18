@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.UserDao">
+    <select id="selectUser" parameterType="int" resultType="com.bean.User">
+        select * from batis_user where id = #{id}
+    </select>
+
+    <!--返回一个List的时候，仍然需要配置的resultType是一行对应的类型-->
+    <select id="selectAllUser"   resultType="com.bean.User">
+        select * from batis_user ;
+    </select>
+
+    <insert id="insertUser" parameterType="com.bean.User" >
+         INSERT INTO  batis_user values (NULL, #{username},#{password},#{email});
+    </insert>
+
+    <delete id="deleteUser" parameterType="int" >
+
+        DELETE FROM   batis_user WHERE ID = #{id}
+    </delete>
+
+    <update id="updateUser" parameterType="com.bean.User">
+        UPDATE batis_user set username= #{username} , password=#{password} ,email=#{email} WHERE ID = #{id};
+    </update>
+
+
+    <update id="updateUserName" parameterType="com.bean.User">
+        UPDATE batis_user set username= #{username}  WHERE ID = #{ID};
+    </update>
+</mapper>

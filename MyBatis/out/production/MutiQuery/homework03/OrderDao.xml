@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao2.OrderDao">
+
+
+   <resultMap id="myOrder" type="Order">
+       <id property="oid" column="oid"></id>
+       <!--<result property="addr" column="addr"></result>
+       <result property="name" column="name"></result>
+       <result property="telephone" column="telephone"></result>-->
+       <!--一对多的关联
+         这里的javatype需要确实的orderItems集合的类型
+         -->
+       <collection property="orderItems"  javaType="list"
+                   select="dao2.OrderDao.findOderItemByOid"
+                   column="oid">
+       </collection>
+   </resultMap>
+
+
+  <select id="findOrderByOid" parameterType="int" resultMap="myOrder">
+      SELECT * FROM  `order` WHERE oid=#{oid};
+  </select>
+
+    <select id="findOderItemByOid" resultType="OrderItem">
+        SELECT  * FROM orderitem WHERE oid= #{oid};
+    </select>
+
+
+</mapper>

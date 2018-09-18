@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.myweb.dao.EmployeeDao">
+
+    <select id="selectByPage" resultType="employee">
+        select * from `employee_inf`
+        <where>
+            <if test="employee.dept!=null">
+                DEPT_ID = #{employee.dept.id}
+            </if>
+            <if test="employee.job!=null">
+                JOB_ID = #{employee.job.id}
+            </if>
+            <if test="employee.name!=null">
+                AND name like concat("%",#{employee.name},"%")
+            </if>
+            <if test="employee.phone!=null">
+                AND phone LIKE CONCAT ('%',#{employee.phone},'%')
+            </if>
+            <if test="employee.name!=null">
+                AND card_id LIKE CONCAT ('%',#{employee.cardId},'%')
+            </if>
+            <if test="employee.name!=null">
+                AND sex = #{employee.sex}
+            </if>
+        </where>
+    </select>
+
+    <select id="count" resultType="int">
+        SELECT COUNT(*) FROM `employee_inf`
+    </select>
+
+    <insert id="save" parameterType="employee">
+      INSERT INTO  `employee_inf` VALUES(NULL,#{name} , #{dept.id},#{job.id} ,#{name} ,#{card_id} ,#{address} ,#{post_code} ,#{tel} ,#{phone} ,#{qq_num} ,#{email},#{sex},#{party},#{birthday},#{race},#{education},#{speciality},#{hobby},#{remark},#{create_date});
+   </insert>
+
+    <delete id="deleteById" parameterType="int">
+      DELETE from `employee_inf` where id=#{id};
+   </delete>
+
+    <update id="update" parameterType="employee">
+        UPDATE `employee_inf` set dept_id=#{dept.id} , job_id=#{job.id} , name=#{name} , card_id=#{card_id}  where id=#{id};
+    </update>
+
+
+
+    <select id="selectById" parameterType="int" resultType="employee">
+      select * from `employee_inf` where id=#{id};
+   </select>
+
+    <!--<select id="selectAllEmployee" resultType="employee">-->
+      <!--select * from `employee_inf` ;-->
+   <!--</select>-->
+</mapper>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE NEWSPAPER SYSTEM "Work02.dtd">
+<NEWSPAPER>
+    <ARTICLE  AUTHOR="Tom">
+        <HEADLINE>this is a headline</HEADLINE>
+        <BYLINE>this is a byline</BYLINE>
+        <LEAD>this is a lead</LEAD>
+        <BODY>this is a body</BODY>
+        <NOTES>this is a notes</NOTES>
+    </ARTICLE>
+    <ARTICLE  AUTHOR="xiaoming" DATE="7.9" EDITION="wangdao" EDITOR="fenghua">
+        <HEADLINE>this is a headline</HEADLINE>
+        <BYLINE>this is a byline</BYLINE>
+        <LEAD>this is a lead</LEAD>
+        <BODY>this is a body</BODY>
+        <NOTES>this is a notes</NOTES>
+    </ARTICLE>
+</NEWSPAPER>

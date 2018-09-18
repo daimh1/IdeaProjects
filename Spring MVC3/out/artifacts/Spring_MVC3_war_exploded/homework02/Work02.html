@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+</head>
+<script>
+    var daynum=new Array(13);
+    daynum=[0,31,28,31,30,31,30,31,31,30,31,30,31];
+    //var dayarray=new Array();
+    function changeday() {
+        var yearselect=document.getElementById("birthyear").value;
+        var monthselect=document.getElementById("birthmonth").value;
+        var day=document.getElementsByName("birthday").value;
+        var dayselect=document.getElementById("birthday");
+        dayselect.options.length=0;
+        var month=Number(monthselect);
+        var year=Number(yearselect);
+        //console.log(month);
+        //console.log(daynum[month]);
+        //console.log(year);
+        for(var i=1;i<=daynum[month];i++){
+            if(year%4==0&&month==2){
+                for(var j=i;j<=29;j++){
+                    var option = new Option(j,j);
+                    dayselect.add(option);
+                }
+                break;
+            }
+            var option = new Option(i,i);
+            dayselect.add(option);
+        }
+    }
+
+</script>
+<body>
+<br><br>
+<fieldset>
+    <legend>免费开通人人网账号</legend>
+<form method="post" action="/admin/work02.do" enctype="multipart/form-data">
+    <table cellspacing="8" >
+        <tr><td>头像：</td><td><input type="file" name="image"></td></tr>
+        <tr><td>注册邮箱：</td><td><input type="text" name="account"></td></tr>
+        <tr><td> </td><td>你还可以使用<a href="Work02.html">账号</a>注册或者<a href="Work02.html">手机号</a>注册</td></tr>
+        <tr><td>密码：</td><td><input type="password" name="password"></td></tr>
+        <tr><td>真实姓名：</td><td><input type="text" name="realname"></td></tr>
+        <tr><td>性别：</td><td><input type="radio" name="sex">男&nbsp;&nbsp;&nbsp;<input type="radio" name="sex">女</td></tr>
+        <tr><td>兴趣爱好：</td>
+            <td><input type="checkbox" name="hobby">打球&nbsp;&nbsp;&nbsp;
+                <input type="checkbox" name="hobby">玩游戏&nbsp;&nbsp;&nbsp;
+                <input type="checkbox" name="hobby">跑步&nbsp;&nbsp;&nbsp;
+                <input type="checkbox" name="hobby">读书
+            </td></tr>
+        <tr>
+            <td>生日：</td>
+            <td>
+                <select name="birthyear" id="birthyear" onchange="changeday()">
+                    <option>1990</option>
+                    <option>1991</option>
+                    <option>1992</option>
+                    <option>1993</option>
+                    <option>1994</option>
+                    <option>1995</option>
+                    <option>1996</option>
+                    <option>1997</option>
+                    <option>1998</option>
+                    <option>1999</option>
+                </select>
+                年
+                <select name="birthmonth" id="birthmonth"onchange="changeday()">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                    <option>11</option>
+                    <option>12</option>
+                </select>
+                月
+                <select name="birthday" id="birthday">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                    <option>11</option>
+                    <option>12</option>
+                    <option>13</option>
+                    <option>14</option>
+                    <option>15</option>
+                    <option>16</option>
+                    <option>17</option>
+                    <option>18</option>
+                    <option>19</option>
+                    <option>20</option>
+                    <option>21</option>
+                    <option>22</option>
+                    <option>23</option>
+                    <option>24</option>
+                    <option>25</option>
+                    <option>26</option>
+                    <option>27</option>
+                    <option>28</option>
+                    <option>29</option>
+                    <option>30</option>
+                    <option>31</option>
+                </select>
+                日
+            </td>
+
+        </tr>
+        <tr>
+            <td>我现在：</td>
+            <td>
+                <select name="now">
+                    <option>工作</option>
+                    <option>正在上学</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td> </td>
+            <td><img src="verycode.gif" height="125" width="425"/></td>
+        </tr>
+        <!--<tr>
+            <td>自我描述：</td>
+            <td>
+                <textarea rows="10" cols="70" name="selfdescription">
+
+                </textarea>
+            </td>
+        </tr>-->
+        <tr>
+            <td> </td><td><input type="submit" style="font-size: 0px; width:188px; height:42px; background-image: url(btn_reg.gif)"></td>
+        </tr>
+
+    </table>
+
+</form>
+</fieldset>
+</body>
+</html>

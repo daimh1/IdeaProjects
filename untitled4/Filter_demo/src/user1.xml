@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xml-body> 
+  <user username="123" password="123" age="10"/>  
+  <user username="admin" password="1234" age="0"/>  
+  <user name="abc"/>
+</xml-body>

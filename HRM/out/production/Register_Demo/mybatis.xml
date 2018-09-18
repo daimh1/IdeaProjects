@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <properties resource="conn.properties">
+       <!-- <property name="driverclass" value="com.mysql.cj.jdbc.Driver"></property>-->
+     </properties>
+    <typeAliases>
+        <!--<typeAlias type="com.com.cskaoyan.com.cskaoyan.bean.User" alias="User"></typeAlias>
+        <typeAlias type="com.com.cskaoyan.com.cskaoyan.bean.Admin" alias="Admin"></typeAlias>-->
+        <package name="com.myweb.bean"></package>
+    </typeAliases>
+
+   <!-- <environments    default="development">
+        <environment id="development">
+            &lt;!&ndash;目前事务需要自己手动控制&ndash;&gt;
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${driverclass}"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/logindemo?serverTimezone=GMT"/>
+                <property name="username" value="root"/>
+                <property name="password" value="123456"/>
+            </dataSource>
+        </environment>
+    </environments>-->
+    <mappers>
+
+        <!--会自动的把该包下面的所有的接口对应的同名的mapper映射文件导入-->
+        <package name="com.myweb.dao"></package>
+
+    </mappers>
+</configuration>

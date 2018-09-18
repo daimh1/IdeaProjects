@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        ">
+    <!--<bean id="user" class="com.homework02.bean.User">-->
+        <!--<property name="cellphone" ref="cellphone"></property>-->
+        <!--<property name="hobbys">-->
+            <!--<array>-->
+                <!--<value>java</value>-->
+                <!--<value>c</value>-->
+            <!--</array>-->
+        <!--</property>-->
+        <!--<property name="hobbys2">-->
+            <!--<props>-->
+                <!--<prop key="prop1">run</prop>-->
+                <!--<prop key="prop2">swim</prop>-->
+            <!--</props>-->
+        <!--</property>-->
+        <!--<property name="hobbys3">-->
+            <!--<map>-->
+                <!--<entry key="key1" value="eat"></entry>-->
+                <!--<entry key="key2" value="sleep"></entry>-->
+            <!--</map>-->
+        <!--</property>-->
+    <!--</bean>-->
+    <!--<bean id="cellphone" class="com.homework02.bean.Cellphone"></bean>-->
+
+    <bean class="com.homework03.bean.Cat" id="cat"></bean>
+    <bean class="com.homework03.bean.Dog" id="dog"></bean>
+    <bean class="com.homework03.bean.Pig" id="pig"></bean>
+    <bean class="com.homework03.bean.MyBeanPostProcessor"></bean>
+
+</beans>

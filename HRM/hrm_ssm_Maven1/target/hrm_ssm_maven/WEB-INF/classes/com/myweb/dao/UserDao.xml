@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.myweb.dao.UserDao">
+
+
+   <select id="selectByLoginnameAndPassword" parameterType="hashMap" resultType="user">
+      SELECT * FROM  `user_inf` WHERE loginname=#{loginname} AND password = #{password};
+   </select>
+
+   <select id="selectById" parameterType="int" resultType="user">
+      SELECT * FROM  `user_inf` WHERE id=#{id};
+   </select>
+
+   <delete id="deleteById" parameterType="int">
+      DELETE from `user_inf` where id=#{id};
+   </delete>
+
+   <select id="selectByPage" resultType="user">
+      select * from `user_inf`
+      <where>
+         <if test="user.username!=null">
+            username like concat("%",#{user.username},"%")
+         </if>
+         <if test="user.status!=null">
+            AND status LIKE CONCAT ('%',#{user.status},'%')
+         </if>
+      </where>
+      <!--<if test="map.pageModel!=null">-->
+         <!--LIMIT #{pageModel.firstLimitParam} , #{pageModel.pageSize}-->
+      <!--</if>-->
+
+   </select>
+
+   <select id="count" resultType="int">
+      SELECT COUNT(*) FROM `user_inf`;
+   </select>
+
+   <insert id="save" parameterType="user" >
+      INSERT INTO  `user_inf` VALUES (NULL,#{loginname} , #{password},2,null ,#{username});
+   </insert>
+
+   <update id="update" parameterType="user">
+      update `user_inf` set loginname=#{loginname} , password=#{password} , status=1 , username=#{username} where id=#{id};
+   </update>
+
+</mapper>

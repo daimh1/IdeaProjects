@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd
+        ">
+
+
+
+    <bean id="service" class="service.AccountServiceImpl">
+        <property name="dao" ref="dao"></property>
+    </bean>
+    <bean id="dao" class="Dao.AccountDaoImpl"></bean>
+
+    <bean class="advice.MyAdvice" id="myadvice"></bean>
+    <bean class="advice.MyAdvice2" id="myadvice2"></bean>
+    <!--<bean id="servcieProxy" class="org.springframework.aop.framework.ProxyFactoryBean">-->
+        <!--<property name="target" ref="service"></property>-->
+        <!--<property name="interceptorNames" value="myadvice"></property>-->
+    <!--</bean>-->
+
+    <!--<bean id="myadvice2" class="advice.MyAdvice2"></bean>-->
+    <aop:config>
+        <!--<aop:advisor advice-ref="myadvice" pointcut-ref="mypointcut"></aop:advisor>-->
+        <aop:aspect ref="myadvice2">
+            <aop:pointcut id="mypointcut" expression="execution(public * *.*Service*.trans*(..))"></aop:pointcut>
+            <aop:before method="print1" pointcut="execution(public * *.*Service*.trans*(..))"></aop:before>
+            <aop:after-returning method="print2" pointcut-ref="mypointcut" returning="ret"></aop:after-returning>
+            <aop:around method="print3" pointcut-ref="mypointcut"></aop:around>
+            <aop:after-throwing method="print4" pointcut-ref="mypointcut" throwing="e"></aop:after-throwing>
+            <aop:after method="print5" pointcut-ref="mypointcut"></aop:after>
+        </aop:aspect>
+
+    </aop:config>
+
+</beans>

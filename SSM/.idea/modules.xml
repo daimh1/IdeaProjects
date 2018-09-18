@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/AOPDemo/AOPDemo.iml" filepath="$PROJECT_DIR$/AOPDemo/AOPDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AspectJ/AspectJ.iml" filepath="$PROJECT_DIR$/AspectJ/AspectJ.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JDBCTemplate/JDBCTemplate.iml" filepath="$PROJECT_DIR$/JDBCTemplate/JDBCTemplate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring MVC1/Spring MVC1.iml" filepath="$PROJECT_DIR$/Spring MVC1/Spring MVC1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring Transcation/Spring Transcation.iml" filepath="$PROJECT_DIR$/Spring Transcation/Spring Transcation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringIOC/SpringIOC.iml" filepath="$PROJECT_DIR$/SpringIOC/SpringIOC.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Transcation/Transcation.iml" filepath="$PROJECT_DIR$/Transcation/Transcation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/XmlBean/XmlBean.iml" filepath="$PROJECT_DIR$/XmlBean/XmlBean.iml" />
+    </modules>
+  </component>
+</project>

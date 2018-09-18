@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.CartDao">
+
+    <!--<select id="findCartById" parameterType="int" resultType="Cart">
+        SELECT * FROM t_Cart WHERE cid = #{cid};
+    </select>-->
+
+
+    <resultMap id="myCart" type="Cart">
+        <id property="cid" column="cid"></id>
+        <result property="money" column="money"></result>
+        <!--表示一对一的关联-->
+        <association property="user" javaType="User"
+                     select="findUserByid"
+                     column="uid"
+                     >
+             <!--<id column="id" property="id"></id>
+             <result column="username" property="username"></result>
+             <result column="password" property="password"></result>
+             <result column="email" property="email"></result>-->
+        </association>
+    </resultMap>
+
+
+
+
+    <select id="findCartById" parameterType="int" resultMap="myCart">
+        SELECT * FROM t_Cart WHERE cid = #{cid};
+    </select>
+
+
+    <select id="findUserByid" parameterType="int" resultType="user">
+        SELECT * FROM t_user WHERE id = #{id};
+    </select>
+
+    <!--第二种实现-->
+    <select id="findCartById2" parameterType="int" resultType="CartExt">
+         SELECT * FROM t_user INNER JOIN t_cart ON t_user.`id` = t_cart.`uid`
+         WHERE id= #{xx};;
+    </select>
+
+
+
+    <!--第三种实现 意义不大 同第二种思路-->
+
+
+
+
+</mapper>

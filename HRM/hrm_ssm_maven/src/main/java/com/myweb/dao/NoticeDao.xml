@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.myweb.dao.NoticeDao">
+
+
+    <select id="selectByPage" resultType="notice">
+        SELECT * FROM  `notice_inf`
+        <where>
+            <if test="notice.title!=null">
+                name like concat("%",#{notice.title},"%")
+            </if>
+        </where>
+    </select>
+
+    <!--<select id="selectAllJob" resultType="job">-->
+     <!--SELECT * FROM `job_inf`-->
+   <!--</select>-->
+
+    <select id="count" resultType="int">
+     SELECT COUNT(*) FROM `notice_inf`
+   </select>
+
+    <insert id="save" parameterType="notice">
+      INSERT into `notice_inf` VALUES(NULL,#{title} , #{filename}, #{remark}, null , #{user_id});
+   </insert>
+
+    <update id="update" parameterType="notice">
+        update `notice_inf` set title=#{title} , filename=#{filename} , remark=#{remark} , user_id=#{user_id} where id=#{id};
+    </update>
+
+    <select id="selectById" resultType="notice">
+      SELECT * FROM `notice_inf` where id = #{id} ;
+   </select>
+
+    <delete id="deleteById" parameterType="int" >
+      DELETE FROM  `notice_inf` where id = #{id};
+   </delete>
+
+</mapper>

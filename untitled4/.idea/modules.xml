@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Connection_Pool/Connection_Pool.iml" filepath="$PROJECT_DIR$/Connection_Pool/Connection_Pool.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Filter_demo/Filter_demo.iml" filepath="$PROJECT_DIR$/Filter_demo/Filter_demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JSP_demo/JSP_demo.iml" filepath="$PROJECT_DIR$/JSP_demo/JSP_demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Module2/Module2.iml" filepath="$PROJECT_DIR$/Module2/Module2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Module3/Module3.iml" filepath="$PROJECT_DIR$/Module3/Module3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Module4/Module4.iml" filepath="$PROJECT_DIR$/Module4/Module4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Module5/Module5.iml" filepath="$PROJECT_DIR$/Module5/Module5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Module6/Module6.iml" filepath="$PROJECT_DIR$/Module6/Module6.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Module7jsp/Module7jsp.iml" filepath="$PROJECT_DIR$/Module7jsp/Module7jsp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/My_DBUtils/My_DBUtils.iml" filepath="$PROJECT_DIR$/My_DBUtils/My_DBUtils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javaeejdbc/javaeejdbc.iml" filepath="$PROJECT_DIR$/javaeejdbc/javaeejdbc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javasejdbc/javasejdbc.iml" filepath="$PROJECT_DIR$/javasejdbc/javasejdbc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mysql/mysql.iml" filepath="$PROJECT_DIR$/mysql/mysql.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pattern/pattern.iml" filepath="$PROJECT_DIR$/pattern/pattern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/transaction02/transaction02.iml" filepath="$PROJECT_DIR$/transaction02/transaction02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/untitled/untitled.iml" filepath="$PROJECT_DIR$/untitled/untitled.iml" />
+      <module fileurl="file://$PROJECT_DIR$/untitled2/untitled2.iml" filepath="$PROJECT_DIR$/untitled2/untitled2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/untitled4.iml" filepath="$PROJECT_DIR$/untitled4.iml" />
+    </modules>
+  </component>
+</project>

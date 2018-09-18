@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="hrm_ssm_Maven1:war">
+    <output-path>$PROJECT_DIR$/hrm_ssm_Maven1/target</output-path>
+    <root id="archive" name="hrm_ssm_maven.war">
+      <element id="artifact" artifact-name="hrm_ssm_Maven1:war exploded" />
+    </root>
+  </artifact>
+</component>
